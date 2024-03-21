@@ -95,3 +95,24 @@ CREATE TABLE [dbo].[ReservationRequest](
 GO
 
 
+
+
+INSERT INTO [dbo].[EnableUser]
+           ([Uid]
+           ,[FirstName]
+           ,[LastName]
+           ,[Phone]
+           ,[Email]
+           ,[Type]
+           ,[password])
+     VALUES
+           ('admin123',
+            'admin', -- Assuming 'admin' is the first name
+            'admin', -- Assuming 'admin' is also the last name
+            'admin', -- Assuming 'admin' is the phone number
+            'admin@example.com', -- Example email
+            1, -- Example user type (assuming 1 represents a certain user type)
+            'admin123') -- Example password
+GO
+
+
