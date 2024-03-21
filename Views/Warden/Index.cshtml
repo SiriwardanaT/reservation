@@ -154,7 +154,7 @@
                         <h5 class="property-price">@viewmodal.Price</h5>
                         <p class="property-facilities">@viewmodal.Facilities</p>
                         <p class="property-room-count">No of Rooms: @viewmodal.CountRoom</p>
-                        <a href="#" class="btn btn-primary show-images-btn" onclick="()=>{alert(11)">Show All Images</a>
+                        <a href="http://localhost:5119/Landloard/ShowAllImages?pid=@viewmodal.Pid" class="btn btn-primary show-images-btn" onclick="()=>{alert(11)">Show All Images</a>
                     </div>
                 </div>
             }
@@ -168,13 +168,12 @@
             <img id="pimage" src="https://avatars.githubusercontent.com/u/62628408?s=96&v=4" width="300px" height="100px" alt="user" />
             <form action="/Warden/AddStatus" method="post">
                 <input type="text" id="pid" name="pid">
-                <input type="text" id="reason" name="reason">
+                <input placeholder="Enter Reject Reason if any" type="text" id="reason" name="reason">
                 <!-- Dropdown menu -->
                 <select id="status" name="status">
                     <option value="1">Approved</option>
                     <option value="0">Reject</option>
                 </select>
-                input
                 <!-- Submit buttons -->
                 <button type="submit" style="background-color: green; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px;">Submit Feedback</button>
             </form>

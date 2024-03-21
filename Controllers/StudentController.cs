@@ -6,6 +6,8 @@ using Newtonsoft.Json.Linq;
 using System.Drawing;
 using System.Security.Cryptography;
 using test.Models;
+using System.Net.Mail;
+using System.Net;
 
 namespace test.Controllers
 {
@@ -28,8 +30,10 @@ namespace test.Controllers
                 _ctx.Add(reqesut);
                 _ctx.SaveChanges();
 
+                
 
-                 return RedirectToAction("ShowMyReservation", "Student");
+
+                return RedirectToAction("ShowMyReservation", "Student");
 
             }
             catch (Exception ex)
@@ -94,6 +98,32 @@ namespace test.Controllers
                 if (requestEx != null)
                 {
                     requestEx.Status = 1;
+                    _ctx.Update(requestEx);
+                    _ctx.SaveChanges();
+                    return RedirectToAction("ShowMyReservationByPid", "Student", new { pids = expids });
+                }
+                else
+                {
+                    return View();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return View();
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Reject(string Rid, string expids)
+        {
+            try
+            {
+                var _ctx = new ReservationnContext();
+                var requestEx = await _ctx.ReservationRequests.FindAsync(Rid);
+                if (requestEx != null)
+                {
+                    requestEx.Status = 0;
                     _ctx.Update(requestEx);
                     _ctx.SaveChanges();
                     return RedirectToAction("ShowMyReservationByPid", "Student", new { pids = expids });

@@ -5,16 +5,56 @@
       "PackagePath": "staticwebassets\\test.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\OIP_a720.jpg",
+      "PackagePath": "staticwebassets\\Images\\OIP_a720.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\OIP_c54a.jpg",
+      "PackagePath": "staticwebassets\\Images\\OIP_c54a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\b3_55aa.png",
+      "PackagePath": "staticwebassets\\Images\\b3_55aa.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\b3_d7aa.png",
+      "PackagePath": "staticwebassets\\Images\\b3_d7aa.png"
+    },
+    {
       "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\hostal_46bc.png",
       "PackagePath": "staticwebassets\\Images\\hostal_46bc.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\hostal_4b4d.png",
+      "PackagePath": "staticwebassets\\Images\\hostal_4b4d.png"
     },
     {
       "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\hostal_7847.png",
       "PackagePath": "staticwebassets\\Images\\hostal_7847.png"
     },
     {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\hostal_7c28.png",
+      "PackagePath": "staticwebassets\\Images\\hostal_7c28.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\hostal_df60.png",
+      "PackagePath": "staticwebassets\\Images\\hostal_df60.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\n1_0a04.jpg",
+      "PackagePath": "staticwebassets\\Images\\n1_0a04.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\n1_3de0.jpg",
+      "PackagePath": "staticwebassets\\Images\\n1_3de0.jpg"
+    },
+    {
       "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\n1_4b65.jpg",
       "PackagePath": "staticwebassets\\Images\\n1_4b65.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\n1_5497.jpg",
+      "PackagePath": "staticwebassets\\Images\\n1_5497.jpg"
     },
     {
       "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\n1_8fa4.jpg",
@@ -25,20 +65,80 @@
       "PackagePath": "staticwebassets\\Images\\n1_9f57.jpg"
     },
     {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\n1_b529.jpg",
+      "PackagePath": "staticwebassets\\Images\\n1_b529.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\n1_c8c1.jpg",
+      "PackagePath": "staticwebassets\\Images\\n1_c8c1.jpg"
+    },
+    {
       "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\n1_e720.jpg",
       "PackagePath": "staticwebassets\\Images\\n1_e720.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\n2_5c2e.jpg",
+      "PackagePath": "staticwebassets\\Images\\n2_5c2e.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\n2_5f7c.jpg",
+      "PackagePath": "staticwebassets\\Images\\n2_5f7c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\n2_7648.jpg",
+      "PackagePath": "staticwebassets\\Images\\n2_7648.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\n2_a4fa.jpg",
+      "PackagePath": "staticwebassets\\Images\\n2_a4fa.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\n2_d356.jpg",
+      "PackagePath": "staticwebassets\\Images\\n2_d356.jpg"
     },
     {
       "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\s1_330f.jpeg",
       "PackagePath": "staticwebassets\\Images\\s1_330f.jpeg"
     },
     {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\s1_d66d.jpeg",
+      "PackagePath": "staticwebassets\\Images\\s1_d66d.jpeg"
+    },
+    {
       "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\s1_fad5.jpeg",
       "PackagePath": "staticwebassets\\Images\\s1_fad5.jpeg"
     },
     {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\th_6f07.jfif",
+      "PackagePath": "staticwebassets\\Images\\th_6f07.jfif"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\th_aa13.jfif",
+      "PackagePath": "staticwebassets\\Images\\th_aa13.jfif"
+    },
+    {
       "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\yy_01e2.jpg",
       "PackagePath": "staticwebassets\\Images\\yy_01e2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\yy_119a.jpg",
+      "PackagePath": "staticwebassets\\Images\\yy_119a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\yy_1902.jpg",
+      "PackagePath": "staticwebassets\\Images\\yy_1902.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\yy_85ab.jpg",
+      "PackagePath": "staticwebassets\\Images\\yy_85ab.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\yy_a487.jpg",
+      "PackagePath": "staticwebassets\\Images\\yy_a487.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\Images\\yy_f950.jpg",
+      "PackagePath": "staticwebassets\\Images\\yy_f950.jpg"
     },
     {
       "Id": "C:\\Users\\user\\source\\repos\\test\\test\\wwwroot\\css\\site.css",

@@ -23,7 +23,7 @@
     <div style="font-family: Raleway;">
 
         <h1>My Properties</h1> 
-        <a href="https://localhost:44328/Landloard/AddProperty"><button class="btn btn-primary" type="submit">Add Property</button></a>
+        <a href="http://localhost:5119/Landloard/AddProperty"><button class="btn btn-primary" type="submit">Add Property</button></a>
         <br></br>
         <table class="table table-sm table-info">
             <thead>
@@ -71,9 +71,12 @@
                             </td>
                             <td>
                                 <form method="post" action="/Landloard/UpdateProperty">
-                                    <input type="type" name="pid" value="@p.Pid" />
+                                    <input type="hidden" type="type" name="pid" value="@p.Pid" />
                                     <button type="submit">Update</button>
                                 </form>
+                            </td>
+                            <td>
+                                <a href="http://localhost:5119/Student/ShowMyReservationByPid?pid=@p.Pid">Show requests</a>
                             </td>
                         </tr>
                     </tbody>
@@ -82,46 +85,6 @@
             }
         </table>
     </div>
-
-    <div style="font-family: Raleway;">
-        <h1>Student Requests</h1>
-        <table class="table table-sm table-success">
-            <thead>
-                <tr>
-                    <th scope="col">Student requestId</th>
-                    <th scope="col">Total Number of student</th>
-                    <th scope="col">Requested number of rooms</th>
-                    <th scope="col">Requested Property Number</th>
-                    <th scope="col">Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>Otto</td>
-                    <td>Otto</td>
-                    <td><button>Approve</button></td>
-                    <td><button>Reject</button></td>
-                    <td><button>Show student</button></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    
 
     <script>
         // Add event listeners to all delete buttons

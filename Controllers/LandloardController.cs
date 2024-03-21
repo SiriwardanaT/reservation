@@ -105,6 +105,7 @@ namespace test.Controllers
                 pv.Price = getpro.Result.Price;
                 pv.Facilities = getpro.Result.Facilities;
                 pv.CountRoom = getpro.Result.CountRoom;
+                pv.Pid = getpro.Result.Pid;
                 ViewBag.property = pv;
                 return View();
             }
@@ -153,7 +154,7 @@ namespace test.Controllers
                     var filePath = Path.Combine(dir, uniqueFileName);
                     await file.CopyToAsync(new FileStream(filePath, FileMode.Create));
 
-                    var pathtostore = "https://localhost:44328/images/" + uniqueFileName;
+                    var pathtostore = "http://localhost:5119/images/" + uniqueFileName;
                     pathList.Add(pathtostore);
                 }
                 Random rnd = new Random();
@@ -172,23 +173,33 @@ namespace test.Controllers
 
                 //Todo: save to database
                 _ctx.Add(prop);
-                Image img = new Image();
-                img.Pid = prop.Pid;
+                var addedPro = _ctx.SaveChanges();
+
                 pathList.ForEach(im => {
+                    Image img = new Image();
+                    img.Pid = prop.Pid;
                     img.ImageId = "Img" + GenerateUniqueNumber();
                     img.Url = im;
                     _ctx.Add(img);
+                    var addimg = _ctx.SaveChanges();
                 });
-               
-                var addedPro = _ctx.SaveChanges();
 
-                return View();
+
+                return RedirectToAction("Index", "Landloard");
             }
             catch (Exception ex)
             {
                 return View();
 
             }
+        }
+
+        public IActionResult ShowAllImages(string pid)
+        {
+            ReservationnContext _ctx = new ReservationnContext();
+            var result = _ctx.Images.Where(e => e.Pid == pid).ToList();
+            ViewBag.ImgList = result;
+            return View();
         }
 
         private string ReGetUniqueFileName(string fileName)

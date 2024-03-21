@@ -133,7 +133,7 @@ namespace test.Controllers
             {
                 var _ctx = new ReservationnContext();
                 enableUser.Uid = Guid.NewGuid().ToString().Substring(1, 5);
-                enableUser.Type = 0;
+                enableUser.Type = 1;
                 _ctx.Add(enableUser);
                 _ctx.SaveChanges();
                 ViewBag.ok = true;
