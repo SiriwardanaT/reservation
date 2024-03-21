@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <style>
+        #customers {
+            font-family: Raleway;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #customers td, #customers th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #customers tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            #customers tr:hover {
+                background-color: #ddd;
+            }
+
+            #customers th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #04AA6D;
+                color: white;
+            }
+    </style>
+</head>
+<body>
+    <h1>Student Panel</h1>
+
+    <div style="font-family: Raleway;">
+        <h5>My Reservation</h5>
+
+        <table id="customers">
+            <tr>
+                <th>Request Id</th>
+                <th>Requested No of student </th>
+                <th>Requested No of Rooms</th>
+                <th>Status</th>
+            </tr>
+            @if (@ViewBag.myeservation != null)
+            {
+                foreach (ReservationRequest requests in @ViewBag.myeservation)
+                {
+                    <tr>
+                        <td>@requests.Rid</td>
+                        <td>@requests.NoOfStudents</td>
+                        <td>@requests.NoOfRooms</td>
+                        @if (@requests.Status == 0)
+                        {
+                            <td>Rejected</td>
+                        }
+                        else if (@requests.Status == 1)
+                        {
+                            <td>Approved</td>
+                        }
+                        else
+                        {
+                            <td>Still in Progress</td>
+                        }
+                    </tr>
+                }
+            }
+
+        </table>
+
+
+    </div>
+
+    <br />
+
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-image: url("/img/h3.jpg");
+            padding: 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        header {
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .house {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for better readability */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .house img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        .house-details {
+            margin-top: 20px;
+        }
+
+        footer {
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+        }
+
+        /* Button styles */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #1a73e8;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .slideshow-container img {
+            width: 100%;
+            vertical-align: middle;
+        }
+
+        .slide {
+            animation: slideshow 5s infinite;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        .slide:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .slide:nth-child(2) {
+            animation-delay: 5s;
+        }
+
+        .slide:nth-child(3) {
+            animation-delay: 10s;
+        }
+
+        /* Button container */
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <h1>Welcome to House Rental</h1>
+        </header>
+
+        <!-- Button container -->
+        <div class="button-container">
+            <a href="https://localhost:44328/Home/login" class="btn">Login</a>
+            <a href="https://localhost:44328/Home/Register" class="btn">Register Now</a>
+        </div>
+        <!-- Slideshow -->
+        <div class="slideshow-container">
+            <img class="slide" src="img/h1.jpeg" />
+            <img class="slide" src="img/h2.jpeg" />
+            <img class="slide" src="img/h3.jpeg" />
+        </div>
+
+        <div class="container">
+            <div class="house">
+                <img src="~/img/h1.jpg" />
+                <div class="house-details">
+                    <h2>Beautiful Family House</h2>
+                    <p>Located in a quiet neighborhood, this spacious house is perfect for families.</p>
+                    <p>Price: $2000/month</p>
+                    <a href="#">View Details</a>
+                </div>
+            </div>
+
+            <div class="house">
+                <img src="~/img/h2.jpeg" />
+                <div class="house-details">
+                    <h2>Modern Apartment</h2>
+                    <p>This stylish apartment offers a comfortable living space with modern amenities.</p>
+                    <p>Price: $1500/month</p>
+                    <a href="#">View Details</a>
+                </div>
+            </div>
+
+            <div class="house">
+               <img src="~/img/h2.jpeg" />
+                <div class="house-details">
+                    <h2>Modern Apartment</h2>
+                    <p>This stylish apartment offers a comfortable living space with modern amenities.</p>
+                    <p>Price: $1500/month</p>
+                    <a href="#">View Details</a>
+                </div>
+            </div>
+
+            <!-- Add more houses as needed -->
+        </div>
+
+
+        <footer>
+            <p>&copy; 2024 House Rental. All rights reserved.</p>
+        </footer>
+    </form>
+</body>
+</html>

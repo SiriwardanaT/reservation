@@ -1,0 +1,209 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #f1f1f1;
+    }
+
+    #googleMap {
+        height: 500px;
+        width: 70%;
+        float: left;
+    }
+
+    #regForm {
+        background-color: #ffffff;
+        margin: 100px auto;
+        font-family: Raleway;
+        padding: 40px;
+        width: 70%;
+        min-width: 300px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    input {
+        padding: 10px;
+        width: 100%;
+        font-size: 17px;
+        font-family: Raleway;
+        border: 1px solid #aaaaaa;
+    }
+
+        /* Mark input boxes that gets an error on validation: */
+        input.invalid {
+            background-color: #ffdddd;
+        }
+
+    .tab {
+        display: none;
+    }
+
+    button {
+        background-color: #04AA6D;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 17px;
+        font-family: Raleway;
+        cursor: pointer;
+    }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+    #prevBtn {
+        background-color: #bbbbbb;
+    }
+
+    .step {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbbbbb;
+        border: none;
+        border-radius: 50%;
+        display: inline-block;
+        opacity: 0.5;
+    }
+
+        .step.active {
+            opacity: 1;
+        }
+        .step.finish {
+            background-color: #04AA6D;
+        }
+</style>
+<body>
+
+    <form id="regForm" enctype="multipart/form-data"  method="post" action="/Landloard/AddProperty">
+        <h1>Add Property Information and location</h1>
+        <div class="tab">
+            Property Information :
+            <p><input placeholder="Price (EG:4000)" oninput="this.className = ''" name="price"></p>
+            <p><input placeholder="No of rooms " oninput="this.className = ''" name="countroom"></p>
+            <p><input type="hidden" name="landownerid" value="@ViewBag.uid"></p>
+            <p><input placeholder="Enter Facilities (Eg : air conditional room , attached bathroom) " oninput="this.className = ''" name="facilities"></p>
+            Enter Image :
+            <p><input type="file" oninput="this.className = ''" name="image" multiple></p>
+        </div>
+        <div class="tab" style="height:600px">
+            Location information:
+            <div id="googleMap"></div>
+            <input type="text" name="location" id="location">
+        </div>
+        <div style="overflow:auto;">
+            <div style="float:right;">
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
+    </form>
+
+    <script>
+        var currentTab = 0;
+        showTab(currentTab); 
+
+        function showTab(n) {
+            var x = document.getElementsByClassName("tab");
+            x[n].style.display = "block";
+
+            if (n == 0) {
+                document.getElementById("prevBtn").style.display = "none";
+            } else {
+                document.getElementById("prevBtn").style.display = "inline";
+            }
+            if (n == (x.length - 1)) {
+                document.getElementById("nextBtn").innerHTML = "Submit";
+            } else {
+                document.getElementById("nextBtn").innerHTML = "Next";
+            }
+            fixStepIndicator(n)
+        }
+
+        function nextPrev(n) {
+            var x = document.getElementsByClassName("tab");
+            if (n == 1 && !validateForm()) return false;
+            x[currentTab].style.display = "none";
+            currentTab = currentTab + n;
+            if (currentTab >= x.length) {
+                document.getElementById("regForm").submit();
+                return false;
+            }
+            showTab(currentTab);
+        }
+
+        function validateForm() {
+
+            var x, y, i, valid = true;
+            x = document.getElementsByClassName("tab");
+            y = x[currentTab].getElementsByTagName("input");
+            for (i = 0; i < y.length; i++) {
+                if (y[i].value == "") {
+ 
+                    y[i].className += " invalid";
+                    valid = false;
+                }
+            }
+
+            if (valid) {
+                document.getElementsByClassName("step")[currentTab].className += " finish";
+            }
+            return valid;
+        }
+
+        function fixStepIndicator(n) {
+            var i, x = document.getElementsByClassName("step");
+            for (i = 0; i < x.length; i++) {
+                x[i].className = x[i].className.replace(" active", "");
+            }
+            x[n].className += " active";
+        }
+
+        function myMap() {
+            var myCenter = new google.maps.LatLng(6.950709, 79.986646);
+            var mapProp = {
+                center: myCenter,
+                zoom: 12,
+                scrollwheel: false,
+                draggable: true,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            var marker = new google.maps.Marker({ position: myCenter, map: map });
+
+            map.addListener("click", (mapsMouseEvent) => {
+        // Close the current InfoWindow.
+                var location = JSON.stringify(mapsMouseEvent.latLng.toJSON())
+                document.getElementById("location").value = location;
+            });
+
+        }
+
+        
+       
+    </script>
+
+</body>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCc0e5i9SBs6hE1DeON81M2q-q68KfBqMo&callback=myMap"></script>
+</html>
